@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Multiple Buttons </title>
+</head>
+<body>
+
+<div  id="container1" class="box">
+  <h2>Hide Text</h2>
+  <p id="text1" >Click the button to hide the text</p>
+  <button onclick="document.getElementById('text1').style.display='none'">Hide Text</button>
+</div>
+
+<div s id="container2" class="box">
+  <h2>Show Text</h2>
+  <p id="text2" style="display: none;">Click the button to show the text</p>
+  <button onclick="document.getElementById('text2').style.display='block'">Display Text</button>
+</div>
+
+<div  id="container3" class="box">  
+<h2>Flower change </h2>
+<button onclick="document.getElementById('myImage').src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAueXA2PdI6l2P6O2xe0RU5DP2ZWu5QmZ_Xg&s'">Change the flower</button>
+<img id="myImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAueXA2PdI6l2P6O2xe0RU5DP2ZWu5QmZ_Xg&s" style="width:100px">
+<button onclick="document.getElementById('myImage').src='https://www.gardenia.net/wp-content/uploads/2024/11/shutterstock_669619393.jpg'">Change the flower</button>
+</div>
+
+<div id="container4" class="box">
+  <h2>Change background</h2>
+  <p id="myDiv" style="background-color:lightblue; padding:20px;"> This div's background color will change when you click the button.</p>
+  <button onclick="document.getElementById('myDiv').style.backgroundColor='lightgreen'">Change Background</button>
+</div>
+
+
+</body>
+</html>
