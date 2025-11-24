@@ -1,12 +1,9 @@
-/* GLOBAL */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background: #F5F6F7;
   color: #333;
 }
-
-/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
@@ -63,35 +60,14 @@ header h1 {
 /* HERO BANNER */
 .hero {
   width: 100%;
-  height: 320px;
-  background-image: url("https://maps-nepal.com/img/1200/nepal-route-map.jpg");
+  height: 300px;
+  background-image: url("https://plus.unsplash.com/premium_photo-1682310071124-33632135b2ee?q=80&w=1212&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   align-items: center;
-  justify-content: center;
   position: relative;
-
-  /* Smooth edges + subtle shadow */
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.25);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
-
-/* Dark overlay for readability */
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.45);
-  top: 0;
-  left: 0;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
 .hero-overlay {
   width: 100%;
   text-align: center;
@@ -188,7 +164,6 @@ header h1 {
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
-
 .info-cards .card {
   background: white;
   padding: 30px 20px;
@@ -197,18 +172,15 @@ header h1 {
   box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
   transition: 0.3s ease;
 }
-
 .info-cards .card:hover {
   transform: translateY(-6px);
   box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
 }
-
 .info-cards img {
   width: 70px;
   height: 70px;
   margin-bottom: 15px;
 }
-
 .info-cards h3 {
   margin: 0;
   font-size: 20px;
@@ -216,19 +188,16 @@ header h1 {
   font-weight: 600;
   margin-bottom: 10px;
 }
-
 .info-cards p {
   color: #666;
   font-size: 15px;
   line-height: 1.4;
 }
-
 /* ANIMATIONS */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
 /* RESPONSIVE */
 @media(max-width: 900px) {
   .info-cards {
@@ -238,8 +207,7 @@ header h1 {
     width: 80%;
   }
 }
-
-@media(max-width: 700px) {
+@media(max-width: 800px) {
   .main-nav { display: none; }
   .ham-menu { display: block; }
 
@@ -253,7 +221,6 @@ header h1 {
     width: 100%;
   }
 }
-
 @media(max-width: 500px) {
   .info-cards {
     grid-template-columns: 1fr;
