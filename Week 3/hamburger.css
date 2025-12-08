@@ -1,0 +1,231 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #F5F6F7;
+  color: #333;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1E1F26;
+  padding: 18px 50px;
+  color: white;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.25);
+}
+header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  color: #4CAF50;
+  letter-spacing: 1px;
+}
+
+/* NAVIGATION */
+.main-nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.main-nav a {
+  color: #dcdcdc;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.main-nav a:hover,
+.main-nav a.active {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+/* HAMBURGER */
+.ham-menu {
+  display: none;
+  width: 35px;
+  cursor: pointer;
+}
+.ham-menu span {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: white;
+  margin: 6px 0;
+  border-radius: 3px;
+}
+
+/* HERO BANNER */
+.hero {
+  width: 100%;
+  height: 300px;
+  background-image: url("https://plus.unsplash.com/premium_photo-1682310071124-33632135b2ee?q=80&w=1212&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.hero-overlay {
+  width: 100%;
+  text-align: center;
+  background: rgba(0,0,0,0.45);
+  padding: 50px 0;
+}
+.hero-overlay h2 {
+  color: white;
+  font-size: 34px;
+  margin: 0;
+  font-weight: 700;
+}
+.hero-overlay p {
+  color: #e6e6e6;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* SEARCH SECTION */
+.search-section {
+  margin: 50px auto;
+  text-align: center;
+}
+.search-section h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #1E1F26;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+.search-box input {
+  width: 320px;
+  padding: 14px;
+  border-radius: 8px;
+  border: 2px solid #bbb;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+.search-box input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+.search-box button {
+  padding: 14px 22px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+.search-box button:hover {
+  background: #45A049;
+}
+
+/* SEARCH RESULT CARDS */
+#resultsContainer {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.result-card {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.12);
+  border-left: 5px solid #4CAF50;
+  animation: fadeIn 0.3s ease;
+}
+.result-card h3 {
+  margin: 0 0 8px;
+  color: #1E1F26;
+  font-size: 20px;
+}
+.result-card p {
+  margin: 0;
+  color: #555;
+}
+
+/* INFO CARDS (NEW) */
+.info-cards {
+  width: 85%;
+  margin: 60px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.info-cards .card {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+.info-cards .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
+}
+.info-cards img {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+}
+.info-cards h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #1E1F26;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.info-cards p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.4;
+}
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* RESPONSIVE */
+@media(max-width: 900px) {
+  .info-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #resultsContainer {
+    width: 80%;
+  }
+}
+@media(max-width: 800px) {
+  .main-nav { display: none; }
+  .ham-menu { display: block; }
+
+  .search-box {
+    flex-direction: column;
+    width: 85%;
+    margin: auto;
+  }
+  .search-box input,
+  .search-box button {
+    width: 100%;
+  }
+}
+@media(max-width: 500px) {
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+  header {
+    padding: 18px 20px;
+  }
+}

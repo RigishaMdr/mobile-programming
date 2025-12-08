@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #F2F3F5;
+  color: #333;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1E1F26; 
+  padding: 18px 50px;
+  color: white;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+}
+header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  color: #4CAF50;      
+  letter-spacing: 1px;
+}
+.main-nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.main-nav a {
+  color: #dcdcdc;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.main-nav a:hover,
+.main-nav a.active {
+  color: #4CAF50;
+  font-weight: bold;
+}
+.ham-menu {
+  display: none;
+  width: 35px;
+  cursor: pointer;
+}
+.ham-menu span {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: white;
+  margin: 6px 0;
+  border-radius: 3px;
+}
+.mini-hero {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #1E1F26;
+}
+.mini-hero h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #4CAF50; 
+}
+.mini-hero p {
+  font-size: 16px;
+  color: #555;
+  margin: 0;
+}
+.search-section {
+  margin: 60px auto;
+  text-align: center;
+}
+.search-section h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #1E1F26;
+}
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.search-box input {
+  width: 320px;
+  padding: 14px;
+  border-radius: 8px;
+  border: 2px solid #bbb;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.search-box input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+.search-box button {
+  padding: 14px 22px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.search-box button:hover {
+  background: #45A049;
+}
+
+@media(max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+
+  .ham-menu {
+    display: block;
+  }
+
+  .search-box {
+    flex-direction: column;
+    width: 85%;
+    margin: auto;
+  }
+
+  .search-box input,
+  .search-box button {
+    width: 100%;
+  }
+}

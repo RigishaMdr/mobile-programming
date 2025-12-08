@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public Bus Route Finder</title>
+  <link rel="stylesheet" href="W3_Assignment.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- JS -->
+  <script src="W3_Assignment.js"></script>
+
+</head>
+<body>
+
+<header>
+  <h1>Bus Route Finder</h1>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Routes</a></li>
+      <li><a href="#">Fare Info</a></li>
+      <li><a href="#">Search</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="ham-menu" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<!-- Small Hero Section -->
+<section class="mini-hero">
+  <h2>Let’s Get You There.</h2>
+  <p>Quickly find buses to your destination.</p>
+</section>
+
+<!-- SEARCH SECTION -->
+<section class="search-section">
+  <h2>Search Bus Route</h2>
+  
+  <div class="search-box">
+    <input type="text" id="destination" placeholder="Enter stop name">
+    <button id="findBus">Find Bus</button>
+  </div>
+
+  <!-- Cards appear directly below search bar -->
+  <div id="resultsContainer"></div>
+</section>
+
+</body>
+</html>

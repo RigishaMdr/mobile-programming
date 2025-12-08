@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public Bus Route Finder</title>
+  <link rel="stylesheet" href="hamburger.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<header>
+  <h1>Bus Route Finder</h1>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#">Routes</a></li>
+      <li><a href="#">Fare Info</a></li>
+      <li><a href="#">Search</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+  <div class="ham-menu" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+<!-- HERO IMAGE SECTION -->
+<section class="hero">
+  <div class="hero-overlay">
+    <h2>Your Journey Starts Here</h2>
+    <p>Find safe and fast bus routes within seconds.</p>
+  </div>
+</section>
+<!-- SEARCH SECTION -->
+<section class="search-section">
+  <h2>Search Bus Route</h2>
+
+  <div class="search-box">
+    <input type="text" id="destination" placeholder="Enter stop name">
+    <button id="findBus">Find Bus</button>
+  </div>
+  <div id="resultsContainer"></div>
+</section>
+
+<!-- INFO CARDS SECTION -->
+<section class="info-cards">
+  <div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/744/744465.png" alt="Sajha Yatayat">
+    <h3>Sajha Yatayat</h3>
+    <p>RNAC- Jamal-Lainchaur- Lazimpat</p>
+  </div>
+
+  <div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/744/744465.png" alt="Mayur Yatayat">
+    <h3>Mayur Yatayat</h3>
+    <p>Dhulikhel-Bhaktapur- Baneswor- RNAC</p>
+  </div>
+
+  <div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/744/744465.png" alt="Riddhi Siddhi Yatayat">
+    <h3>Riddhi Siddhi Yatayat</h3>
+    <p>Imadol- Koteshwor- RNAC</p>
+  </div>
+
+  <div class="card">
+    <img src="https://cdn-icons-png.flaticon.com/512/744/744465.png" alt="Araniko Yatayat">
+    <h3>Aranika Yatayat</h3>
+    <p>Kamalbinayak- Koteshwor- Chahabil</p>
+  </div>
+</section>
+</body>
+</html>
