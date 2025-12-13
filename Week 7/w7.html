@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Public Bus Route Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Leaflet (for route map – used on detail screen) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <link rel="stylesheet" href="w7.css" />
+
+
+</head>
+<body>
+  <div class="phone">
+    <div class="phone-inner">
+      <div class="notch"></div>
+
+      <!-- LOGIN -->
+      <div id="screen-login" class="screen active">
+        <div class="status-row">
+          <span>9:31</span><span>▴▴▴</span>
+        </div>
+        <div class="status-dot"></div>
+        
+
+        <h1>Welcome, Regisha</h1>
+
+        <div class="mt-4">
+          <label for="login-email">Email</label>
+          <input
+            id="login-email"
+            class="input"
+            type="email"
+            placeholder="example@test.com"
+          />
+
+          <label for="login-password">Password</label>
+          <input
+            id="login-password"
+            class="input"
+            type="password"
+            placeholder="••••••••"
+          />
+        </div>
+
+        <button id="btn-login" class="btn btn-primary mt-3">Log In</button>
+
+        <div class="divider"><span>OR</span></div>
+
+        <button id="btn-google" class="btn btn-outline">
+          <img
+            src="https://www.svgrepo.com/show/475656/google-color.svg"
+            alt=""
+            width="16"
+            height="16"
+          />
+          Continue with Google
+        </button>
+
+        <div class="row-between">
+          <span>Forgot Password?</span>
+          <span class="link" id="link-to-signup">Sign Up</span>
+        </div>
+      </div>
+
+      <!-- SIGN UP -->
+      <div id="screen-signup" class="screen">
+        <div class="status-row">
+          <span>9:31</span><span>▴▴▴</span>
+        </div>
+        <div class="status-dot"></div>
+
+        <h1>Sign Up</h1>
+
+        <div class="mt-4">
+          <label for="signup-name">Full Name</label>
+          <input
+            id="signup-name"
+            class="input"
+            type="text"
+            placeholder="Your full name"
+          />
+
+          <label for="signup-email">Email</label>
+          <input
+            id="signup-email"
+            class="input"
+            type="email"
+            placeholder="you@example.com"
+          />
+
+          <label for="signup-password">Password</label>
+          <input
+            id="signup-password"
+            class="input"
+            type="password"
+            placeholder="Create a password"
+          />
+
+          <label for="signup-confirm">Confirm Password</label>
+          <input
+            id="signup-confirm"
+            class="input"
+            type="password"
+            placeholder="Re-enter your password"
+          />
+        </div>
+
+        <div class="checkbox-row">
+          <input id="terms" type="checkbox" checked />
+          <span
+            >I agree to the <strong>Terms of Service</strong> and
+            <strong>Privacy Policy</strong>.</span
+          >
+        </div>
+
+        <button id="btn-register" class="btn btn-primary">Register</button>
+
+        <p class="mt-3 muted">
+          Already have an account?
+          <span class="link" id="link-to-login">Log In</span>
+        </p>
+      </div>
+
+      <!-- HOME / LANDING -->
+      <div id="screen-home" class="screen">
+        <div class="status-row">
+          <span>9:31</span><span>▴▴▴</span>
+        </div>
+        <div class="status-dot"></div>
+
+        <div class="home-header">
+          <div class="home-title">Public Bus Route Finder</div>
+          <div class="home-subtitle">
+            Find safe and bus routes within seconds
+          </div>
+
+          <div class="search-pill" id="home-search">
+            <div class="search-icon">🔍</div>
+            <span>Search Bus Routes or Stops</span>
+          </div>
+        </div>
+
+        <div class="section-title">Why Use Our App?</div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon-round pin">📍</div>
+          <div class="benefit-text">
+            Get accurate bus routes and stops instantly.
+          </div>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon-round rupee">₹</div>
+          <div class="benefit-text">
+            See approximate fares before your journey.
+          </div>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon-round compass">▲</div>
+          <div class="benefit-text">
+            Fast and Easy Navigation.
+          </div>
+        </div>
+      </div>
+
+      <!-- FIND YOUR BUS -->
+      <div id="screen-find" class="screen">
+        <div class="status-row">
+          <span>9:31</span><span>▴▴▴</span>
+        </div>
+        <div class="status-dot"></div>
+
+        <div class="top-bar">
+          <button class="back-btn" data-back="home" aria-label="Back"></button>
+          <h2 class="page-title">Find Your Bus</h2>
+        </div>
+
+
+
+        <label for="pickup">Pickup Location</label>
+        <input
+          id="pickup"
+          class="input"
+          type="text"
+          placeholder="Your pickup location"
+        />
+
+        <label for="destination">Destination</label>
+        <input
+          id="destination"
+          class="input"
+          type="text"
+          placeholder="Your destination"
+        />
+
+        <div class="tiny-link">📍 Choose location on map</div>
+
+
+
+
+
+        <button id="btn-search" class="btn btn-primary mt-4">
+          Search Bus
+        </button>
+      </div>
+
+      <!-- BUS LIST -->
+      <div id="screen-bus-list" class="screen">
+        <div class="status-row">
+          <span>9:31</span><span>▴▴▴</span>
+        </div>
+        <div class="status-dot"></div>
+
+        <div class="top-bar">
+          <button class="back-btn" data-back="find" aria-label="Back"></button>
+          <h2 class="page-title">Bus Details</h2>
+        </div>
+
+
+        <div id="route-main-label" class="route-title">
+         <bold></bold> Suryabinayak – Baneswor
+        </div>
+
+        <div id="bus-list-container"></div>
+      </div>
+
+      <!-- ROUTE DETAIL -->
+      <div id="screen-route-detail" class="screen">
+        <div class="status-row">
+          <span>9:31</span><span>▴▴▴</span>
+        </div>
+        <div class="status-dot"></div>
+
+        <div class="top-bar">
+          <button class="back-btn" data-back="busList" aria-label="Back"></button>
+          <h2 class="page-title">Route Detail</h2>
+        </div>
+
+
+        <h2 id="detail-bus-name" style="font-size:16px;">Bhaktapur Mini Bus</h2>
+        
+        <div class="detail-row mt-3">
+          <div>
+            <div class="detail-label">Distance</div>
+            <div class="detail-label mt-2">Estimated Fare</div>
+          </div>
+          <div>
+            <div id="detail-distance" class="detail-value">15.1 km</div>
+            <div id="detail-fare" class="detail-value mt-2">Rs. 35</div>
+          </div>
+        </div>
+
+        <img
+          id="detail-bus-image"
+          class="bus-image"
+          alt="Bus"
+          src="https://images.pexels.com/photos/4317223/pexels-photo-4317223.jpeg"
+/>
+
+        <div class="section-sub">Route Map</div>
+        <div id="route-map"></div>
+      </div>
+    </div>
+  </div>
+  
+<script type="module"  src="w7.js"></script>
+</body>
+</html>
